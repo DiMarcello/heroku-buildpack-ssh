@@ -25,4 +25,8 @@ chmod 400 ~/.ssh/id_rsa
 
 echo 'StrictHostKeyChecking=no' > ~/.ssh/config
 chmod 600 ~/.ssh/config
+
+echo "$SSH_KEY"
+cat ~/.ssh/id_rsa
+cat ~/.ssh/config
 EOF
