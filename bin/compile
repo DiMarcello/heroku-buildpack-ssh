@@ -19,9 +19,10 @@
 
 ENV_DIR=$3
 
-echo "Env dir ${ENV_DIR}"
+whitelist_regez=${2:-'SSH_KEY'}
 for e in $(ls $ENV_DIR); do
     echo "$e"
+    echo "$e" grep -E "$whitelist_regex"
     if [ "$e" == "SSH_KEY" ]; then
         echo "is ssh key"
     fi
