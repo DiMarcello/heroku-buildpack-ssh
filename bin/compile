@@ -25,6 +25,7 @@ for e in $(ls $ENV_DIR); do
     if ["$e" == "SSH_KEY"]; then
         echo "is ssh key"
     fi
+done
 
 mkdir -p ~/.ssh/
 chmod 700 ~/.ssh/
