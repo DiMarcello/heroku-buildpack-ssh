@@ -34,7 +34,7 @@ export_env_dir() {
   fi
 }
 
-echo ENV_DIR | export_env_dir
+echo $ENV_DIR | export_env_dir
 
 mkdir -p ~/.ssh/
 chmod 700 ~/.ssh/
