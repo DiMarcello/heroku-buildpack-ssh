@@ -22,10 +22,8 @@ ENV_DIR=$3
 whitelist_regez=${2:-'SSH_KEY'}
 for e in $(ls $ENV_DIR); do
     if [ "$e" = "SSH_KEY" ]; then
-        echo "$e"
         export "$e=$(cat $ENV_DIR/$e)"
     fi
-    echo
 done
 
 mkdir -p ~/.ssh/
