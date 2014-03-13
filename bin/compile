@@ -22,10 +22,10 @@ ENV_DIR=$3
 echo "Env dir ${ENV_DIR}"
 for e in $(ls $ENV_DIR); do
     echo "$e"
-    echo
-    if [$e == "SSH_KEY"]; then
+    if [e == "SSH_KEY"]; then
         echo "is ssh key"
     fi
+    echo
 done
 
 mkdir -p ~/.ssh/
