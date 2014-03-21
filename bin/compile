@@ -19,6 +19,8 @@
 
 ENV_DIR=$3
 
+ls $ENV_DIR
+
 for e in $(ls $ENV_DIR); do
     if [ "$e" = "SSH_KEY" ]; then
         export "$e=$(cat $ENV_DIR/$e)"
