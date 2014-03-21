@@ -41,7 +41,7 @@ echo 'IdentityFile    ~/.ssh/id_rsa' >> ~/.ssh/config
 chmod 600 ~/.ssh/config
 
 echo 'StrictHostKeyChecking=no' > /app/.ssh/config
-echo 'IdentityFile    ~/.ssh/id_rsa' >> /app/.ssh/config       
+echo 'IdentityFile    /app/.ssh/id_rsa' >> /app/.ssh/config       
 chmod 600 /app/.ssh/config
 
 echo "$SSH_KEY"
