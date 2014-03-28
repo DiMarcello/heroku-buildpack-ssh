@@ -24,8 +24,8 @@ for e in $(ls $ENV_DIR); do
     if [ "$e" = "SSH_KEY" ]; then
         echo "$e"
         export "$e=$(cat $ENV_DIR/$e)"
+        echo "$(cat $ENV_DIR/$e)"
     fi
-    echo
 done
 
 mkdir -p ~/.ssh/
