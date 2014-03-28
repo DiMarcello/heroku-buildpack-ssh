@@ -18,11 +18,14 @@
 # -----------------------------------------------------------------------------
 
 ENV_DIR=$3
+echo "$1"
+echo "$2"
+echo "$3"
 
 whitelist_regez=${2:-'SSH_KEY'}
 for e in $(ls $ENV_DIR); do
     if [ "$e" = "SSH_KEY" ]; then
-        echo "$e"
+        echo "$ENV_DIR/$e"
         export "$e=$(cat $ENV_DIR/$e)"
         echo "$(cat $ENV_DIR/$e)"
     fi
