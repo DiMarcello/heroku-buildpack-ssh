@@ -19,8 +19,6 @@
 
 ENV_DIR=$3
 
-ls $ENV_DIR
-
 for e in $(ls $ENV_DIR); do
     if [ "$e" = "SSH_KEY" ]; then
         export "$e=$(cat $ENV_DIR/$e)"
@@ -29,20 +27,12 @@ done
 
 mkdir -p ~/.ssh/
 chmod 700 ~/.ssh/
-chmod 700 /app/.ssh/
 
 echo "$SSH_KEY" > ~/.ssh/id_rsa
-echo "$SSH_KEY" > /app/.ssh/id_rsa
 chmod 400 ~/.ssh/id_rsa
-chmod 400 /app/.ssh/id_rsa
 
 echo 'StrictHostKeyChecking=no' > ~/.ssh/config
-echo 'IdentityFile    ~/.ssh/id_rsa' >> ~/.ssh/config 
 chmod 600 ~/.ssh/config
-
-echo 'StrictHostKeyChecking=no' > /app/.ssh/config
-echo 'IdentityFile    /app/.ssh/id_rsa' >> /app/.ssh/config       
-chmod 600 /app/.ssh/config
 
 echo "$SSH_KEY"
 cat ~/.ssh/id_rsa
