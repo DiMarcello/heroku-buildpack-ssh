@@ -21,6 +21,7 @@ ENV_DIR=$3
 echo "$1"
 echo "$2"
 echo "$3"
+echo "$SSH_KEY"
 
 whitelist_regez=${2:-'SSH_KEY'}
 for e in $(ls $ENV_DIR); do
